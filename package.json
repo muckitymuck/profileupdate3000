@@ -18,7 +18,12 @@
   },
   "homepage": "https://github.com/muckitymuck/profileupdate3000#readme",
   "dependencies": {
+    "axios": "^0.25.0",
     "dotenv": "^15.0.0",
-    "twitter-api-client": "^1.5.1"
+    "node-fetch": "^3.2.0",
+    "nodemon": "^2.0.15",
+    "twit": "^2.2.11",
+    "twitter-api-client": "^1.5.1",
+    "twitter-lite": "^1.1.0"
   }
 }
