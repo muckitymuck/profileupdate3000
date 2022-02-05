@@ -2,6 +2,7 @@ const Twit = require('twit');
 const axios = require('axios');
 const config = require('./config');
 const T = new Twit(config);
+const Numbers = require('number-to-emoji')
 
 let currentFollowersCount;
 
@@ -15,13 +16,19 @@ const getFollowerCount = () => {
         } else {
             //console.log(data)
             currentFollowersCount = data.followers_count;
-            console.log(currentFollowersCount)
-            updateDisplayName()
+            const displayName = data.name;
+            const followersCount = +displayName.match(/\d/g).join();
+
+            if(followersCount !== currentFollowersCount){
+                currentFollowersCount = Numbers.toEmoji(currentFollowersCount);
+                updateDisplayName()
+            }
+
         }
 
     })
 }
-getFollowerCount()
+setInterval(getFollowerCount, 20000)
 
 const updateDisplayName = () => {
     const params = {
