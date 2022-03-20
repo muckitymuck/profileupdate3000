@@ -28,7 +28,7 @@ const getFollowerCount = () => {
 
     })
 }
-setInterval(getFollowerCount, 20000)
+setInterval(getFollowerCount, 2000000)
 
 const updateDisplayName = () => {
     const params = {
